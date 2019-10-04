@@ -22,12 +22,16 @@ The first thing we’ll do is replace the `App` component with our `Metronome` o
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Metronome from './Metronome';
-import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import Metronome from './Metronome';
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Metronome />, document.getElementById('root'));
-registerServiceWorker();
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
 ```
 
 And then create two new files: `src/Metronome.css`, and `src/Metronome.js`.
